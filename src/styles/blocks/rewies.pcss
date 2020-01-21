@@ -1,0 +1,77 @@
+.rewies{
+    padding:264px 50vh 202px 0;
+    min-width: 1100px;
+    position: relative;
+}
+.swiper{
+    position: relative;
+    display:flex;
+    flex-direction:column;
+}
+.rewies__title{
+    font-size: 30px;
+    font-weight: 700;
+}
+.swiper__page{
+    display:flex;
+    position:relative;
+    margin-top:101px;
+}
+.swiper__slide{
+    position:relative;
+    width: 419px;
+    padding-left: 100px;
+    &:before{
+        content: url(../images/content/left-quote.png);
+        position: absolute;
+        left: 0;
+        top: 10px;
+    }
+    margin-left:84px;
+    &:first-child{
+        margin-left:0;
+    }
+}
+.swiper__slide-text{
+    max-width: 360px;
+    /* min-height: 120px; */
+    opacity: 0.5;
+    color: #464d62;
+    font-family: "Open Sans - Semibold";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+}
+.swiper__slide-inner{
+    display: flex;
+    align-items: center;
+    padding-top:32px;
+}
+.swiper__slide-photo{
+    margin-right: 30px;
+    width: 75px;
+    height: 75px;
+    min-width: 75px;
+    min-height: 75px;
+    
+    border-radius: 50%;
+    overflow: hidden;
+   
+}
+.swiper__slide-name-client{
+    margin-bottom: 15px;
+    color: #464d62;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-weight: 700;
+}
+.swiper__slide-name-desk {
+    opacity: 0.3;
+    color: #464d62;
+    font-family: "Open Sans - Semibold";
+    font-size: 16px;
+    font-weight: 400;
+}
+.swiper__slide-next{
+    padding-top:60px;
+}
