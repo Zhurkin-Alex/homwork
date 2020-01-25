@@ -10,75 +10,89 @@ html(lang="en")
   body
     .wrapper
       .welcome-section
-        .paralax
-        //- +image('content/Mountain.png', 'user')  
-        section.hero
-          .container.hero__container
-            header.hero__header
-              .hero__logo
-                a(href="#").logo ЖА  
-              .hero__menu                
-                - var menu = ["Главная","Обо мне","Навыки","Работы","Отзывы","Связаться"];  
-                nav.menu
-                  ul.menu__items
-                    each item in menu
-                      li.menu__item
-                        a.menu__link #{item}              
-              .hero__links
-                - var icons = ["insta", "vk", "github"];
-                ul.socials
-                  each item in icons
-                    li.socials__item
-                      a.socials__link
-                        +icon(item, "socials__icon")
-            .hero__content
-              .user-info
-                .user-info__desc Личный сайт <br> веб разработчика
-                .user-info__username Журкин Алексей
-            .hero__buttons
-              a.scroll-btn Скролл
-                +icon('scroll', 'scroll-btn__icon')  
-        section.about
-          .container.about__container
-            .about__left
-              .user 
-                .user__avatar
-                  .avatar
-                    +image('content/me200.jpg', 'avatar__image')
-                .user__text
-                  - 
-                    var rows = [
-                      ["Проживаю:", "Санкт-петербург"],
-                      ["Возраст:", "31 год"],
-                      ["Родился:", "17 апреля"]
-                    ];
-                  table.user__data
-                    table.user__data-table
-                      each row in rows
-                        tr.user__data-row
-                          each cell in row
-                            td #{cell}
+        .parallax
+          .parallax__layer(data-speed="0.1")
+            img.paralax__image(src=require("images/content/paralax1.png"))  
+          .parallax__layer(data-speed="0.25")
+            img.paralax__image(src=require("images/content/paralax2.png"))  
+          .parallax__layer(data-speed="0.35")
+            img.paralax__image(src=require("images/content/paralax3.png"))  
+          .parallax__layer(data-speed="0.38")
+            img.paralax__image(src=require("images/content/paralax4.png"))  
+          .parallax__layer(data-speed="0.45")
+            img.paralax__image(src=require("images/content/paralax5.png"))  
+          .parallax__layer(data-speed="0.48")
+            img.paralax__image(src=require("images/content/paralax6.png"))  
+          .parallax__layer(data-speed="0.50")
+            img.paralax__image(src=require("images/content/paralax7.png"))  
+        .parasection
+          section.hero
+            .container.hero__container
+              header.hero__header
+                .hero__logo
+                  a(href="#").logo ЖА  
+                .hero__menu                
+                  - var menu = ["Главная","Обо мне","Навыки","Работы","Отзывы","Связаться"];  
+                  nav.menu
+                    ul.menu__items
+                      each item in menu
+                        li.menu__item
+                          a.menu__link #{item}              
+                  .header__close
+                    img.header__close-menu(src="~images/content/close.png", alt="")
+                .hero__links
+                  - var icons = ["insta", "vk", "github"];
+                  ul.socials
+                    each item in icons
+                      li.socials__item
+                        a.socials__link
+                          +icon(item, "socials__icon")
+                .burger
+                  a(href="#" class="burger__menu")
+                  +image('content/menu.png', 'burger__menu-pic')                                      
+              .hero__content
+                .user-info
+                  .user-info__desc Личный сайт <br> веб разработчика
+                  .user-info__username Журкин  <br>  Алексей
+              .hero__buttons
+                a.scroll-btn Скролл
+                  +icon('scroll', 'scroll-btn__icon')  
+          section.about
+            .container.about__container
+              .about__left
+                .user 
+                  .user__avatar
+                    .avatar
+                      +image('content/me200.jpg', 'avatar__image')
+                  .user__text
+                    - 
+                      var rows = [
+                        ["Проживаю:", "Санкт-петербург"],
+                        ["Возраст:", "31 год"],
+                        ["Родился:", "17 апреля"]
+                      ];
+                    table.user__data
+                      table.user__data-table
+                        each row in rows
+                          tr.user__data-row
+                            each cell in row
+                              td #{cell}
 
-            .about__right
-              .about__welcome-text Привет, меня зовут
-              .about__username Журкин Алексей
-              .about__desc Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-              .about__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+              .about__right
+                .about__welcome-text Привет, меня зовут
+                .about__username Журкин Алексей
+                .about__desc Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                .about__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
 
 
-      section.skills  
-        //- .triangles
-        //-   svg.triangles__item(viewBox="0 0 1000 100" preservAcpectRatio="none")
-        //-     polygon(points="0,0 0,100 1000,100")  
-            
-        //-   svg.triangles__item(viewBox="0 0 1000 100" preservAcpectRatio="none")
-        //-     polygon(points="1000,0 1000,100 0,100")         
+      section.skills         
         .container
           .skills__title
             +image('content/rukzak.png', 'skills__pic')
-            h2.skills__title-text Чем я могу быть полезен вам
-            p.skills__title-subtext Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-            .skills__content
+            .skills__inner
+              h2.skills__title-text Чем я могу быть полезен вам
+              p.skills__title-subtext Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+              .skills__content
               .skills__objekt
                 h3.skills__objekt-title Front-end
                 ul.skills__objekt-inner
@@ -149,6 +163,10 @@ html(lang="en")
                       linearGradient(id="skills-gradient" x1="0%" y1="0%" x2="100%" y2="0%")
                         stop(offset="0%" stop-color="#9300e8")
                         stop(offset="100%" stop-color="#4a00ed ")
+      
+      
+      
+      
       section.portfolio
         .container
           h2.portfolio__title Мои работы

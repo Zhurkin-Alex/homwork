@@ -7,19 +7,27 @@ margin-bottom:173px;
     font-size: 36px;
     font-weight: 700;
     margin-bottom:92px;
+    @include desktop{
+        margin-bottom:62px;  
+    }
 }
 .portfolio__slider{
     position: relative;
     display:flex;
 }
 .portfolio__image{
-    /* width: 977px;
-    height: 549px; */
+    @include desktop{
+        width: 623px;
+        height: 353px;
+    }
 }
 .portfolio__script{
     position:relative;
     display:flex;
     width: 27%;
+    @include desktop{
+        width: 37%; 
+    }
     /* flex-direction: column; */
 }
 .portfolio__script-number{
@@ -29,6 +37,10 @@ margin-bottom:173px;
     font-size: 400px;
     font-weight: 800;
     color: #e6e6e6;
+    @include desktop{
+        left: -31px;
+        top: -150px; 
+    }
 }
 .portfolio__script-tags{
     margin-bottom: 50px;
