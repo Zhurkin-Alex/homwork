@@ -44,7 +44,7 @@ html(lang="en")
               .user 
                 .user__avatar
                   .avatar
-                    +image('content/user.jpg', 'avatar__image')
+                    +image('content/me200.jpg', 'avatar__image')
                 .user__text
                   - 
                     var rows = [
@@ -197,13 +197,12 @@ html(lang="en")
             h2.numbers__title Связаться со мной
             form.form(action="#" method="post")
               .numbers__form-inner
-                .numbers__form-items
+                .numbers__form-item
                   label.numbers__form-label(for="for-name") Введите ваше имя                                                  
                   input.numbers__form-input(type="text" id="for-name")
-                .numbers__form-items
-                  label.numbers__form-label(for="for-email") Введите ваш email
-                  .numbers__form-input-svg
-                    input.numbers__form-input(type="email" id="for-email")
+                .numbers__form-item
+                  label.numbers__form-label(for="for-email") Введите ваш email                  
+                  input.numbers__form-input(type="email" id="for-email")
               .numbers__form-item
                 label.numbers__form-label(for="for-text") Сообщение к письму
                 textarea.numbers__form-input(name="textaria", cols="30", rows="3")
