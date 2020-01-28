@@ -1,0 +1,59 @@
+.paralax-budda{
+    position:relative;
+    overflow:hidden;
+    height: 1538px;
+}
+.parallax__layers{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    will-change: transform;
+
+    &:nth-child(1){
+        .paralax__image{
+            object-fit:cover;
+            width:100%;
+            height:100%;
+        } 
+    }
+
+    &:nth-child(2){
+        .paralax__image{
+            object-fit:cover;
+            right:0;
+            bottom:0;
+        } 
+    }
+    &:nth-child(3){
+        .paralax__image{
+            object-fit:cover;
+            left:50%;
+            bottom:318px;
+            margin-left:7%;
+        } 
+    }
+    &:nth-child(4){
+        .paralax__image{
+            object-fit:cover;
+            bottom:0;
+        } 
+    }
+    &:nth-child(5){
+        .paralax__image{
+            object-fit:cover;
+            bottom:0;
+            right:0;
+        } 
+    }
+    &:nth-child(6){
+        .paralax__image{
+            object-fit:cover;
+            bottom:0;
+            display:flex;
+            justify-content:center;
+        } 
+    }
+        
+}

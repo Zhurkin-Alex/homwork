@@ -39,7 +39,7 @@ html(lang="en")
                         li.menu__item
                           a.menu__link #{item}              
                   .header__close
-                    img.header__close-menu(src="~images/content/close.png", alt="")
+                    //- img.header__close-menu(src="~images/content/close.png", alt="")
                 .hero__links
                   - var icons = ["insta", "vk", "github"];
                   ul.socials
@@ -85,146 +85,99 @@ html(lang="en")
                 .about__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
 
 
-      section.skills         
+      section.vallues        
         .container
-          .skills__title
-            +image('content/rukzak.png', 'skills__pic')
-            .skills__inner
-              h2.skills__title-text Чем я могу быть полезен вам
-              p.skills__title-subtext Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-              .skills__content
-              .skills__objekt
-                h3.skills__objekt-title Front-end
-                ul.skills__objekt-inner
-                  li.skills__objekt-item
-                    span.skills__objekt-tag HTML5
-                    svg.skills__objekt-svg(viewBox="0 0 150 150" preservAcpectRatio="none")
-                      circle(cx="75" cy="75" r="65" stroke-width="8" stroke="#454341" fill="none")
-                      circle.skills__objekt-svg-circle(cx="75" cy="75" r="65" stroke-width="20" stroke="url('#skills-gradient')" fill="none")
-                      linearGradient(id="skills-gradient" x1="0%" y1="0%" x2="100%" y2="0%")
-                        stop(offset="0%" stop-color="#9300e8")
-                        stop(offset="100%" stop-color="#4a00ed ")
-                  li.skills__objekt-item
-                    span.skills__objekt-tag CSS3
-                    svg.skills__objekt-svg(viewBox="0 0 150 150" preservAcpectRatio="none")
-                      circle(cx="75" cy="75" r="65" stroke-width="8" stroke="#454341" fill="none")
-                      circle.skills__objekt-svg-circle(cx="75" cy="75" r="65" stroke-width="20" stroke="url('#skills-gradient')" fill="none")
-                      linearGradient(id="skills-gradient" x1="0%" y1="0%" x2="100%" y2="0%")
-                        stop(offset="0%" stop-color="#9300e8")
-                        stop(offset="100%" stop-color="#4a00ed ")
-                  li.skills__objekt-item
-                    span.skills__objekt-tag Javascript
-                    svg.skills__objekt-svg(viewBox="0 0 150 150" preservAcpectRatio="none")
-                      circle(cx="75" cy="75" r="65" stroke-width="8" stroke="#454341" fill="none")
-                      circle.skills__objekt-svg-circle(cx="75" cy="75" r="65" stroke-width="20" stroke="url('#skills-gradient')" fill="none")
-                      linearGradient(id="skills-gradient" x1="0%" y1="0%" x2="100%" y2="0%")
-                        stop(offset="0%" stop-color="#9300e8")
-                        stop(offset="100%" stop-color="#4a00ed ")
-                  li.skills__objekt-item
-                    span.skills__objekt-tag Jquery <br>и Vue.js
-                    svg.skills__objekt-svg(viewBox="0 0 150 150" preservAcpectRatio="none")
-                      circle(cx="75" cy="75" r="65" stroke-width="8" stroke="#454341" fill="none")
-                      circle.skills__objekt-svg-circle(cx="75" cy="75" r="65" stroke-width="20" stroke="url('#skills-gradient')" fill="none")
-                      linearGradient(id="skills-gradient" x1="0%" y1="0%" x2="100%" y2="0%")
-                        stop(offset="0%" stop-color="#9300e8")
-                        stop(offset="100%" stop-color="#4a00ed ")
-              .skills__objekt
-                h3.skills__objekt-title Workflow
-                ul.skills__objekt-inner
-                  li.skills__objekt-item
-                    span.skills__objekt-tag HTML5
-                    svg.skills__objekt-svg(viewBox="0 0 150 150" preservAcpectRatio="none")
-                      circle(cx="75" cy="75" r="65" stroke-width="8" stroke="#454341" fill="none")
-                      circle.skills__objekt-svg-circle(cx="75" cy="75" r="65" stroke-width="20" stroke="url('#skills-gradient')" fill="none")
-                      linearGradient(id="skills-gradient" x1="0%" y1="0%" x2="100%" y2="0%")
-                        stop(offset="0%" stop-color="#9300e8")
-                        stop(offset="100%" stop-color="#4a00ed ")
-                  li.skills__objekt-item
-                    span.skills__objekt-tag CSS3
-                    svg.skills__objekt-svg(viewBox="0 0 150 150" preservAcpectRatio="none")
-                      circle(cx="75" cy="75" r="65" stroke-width="8" stroke="#454341" fill="none")
-                      circle.skills__objekt-svg-circle(cx="75" cy="75" r="65" stroke-width="20" stroke="url('#skills-gradient')" fill="none")
-                      linearGradient(id="skills-gradient" x1="0%" y1="0%" x2="100%" y2="0%")
-                        stop(offset="0%" stop-color="#9300e8")
-                        stop(offset="100%" stop-color="#4a00ed ")
-                  li.skills__objekt-item
-                    span.skills__objekt-tag Javascript
-                    svg.skills__objekt-svg(viewBox="0 0 150 150" preservAcpectRatio="none")
-                      circle(cx="75" cy="75" r="65" stroke-width="8" stroke="#454341" fill="none")
-                      circle.skills__objekt-svg-circle(cx="75" cy="75" r="65" stroke-width="20" stroke="url('#skills-gradient')" fill="none")
-                      linearGradient(id="skills-gradient" x1="0%" y1="0%" x2="100%" y2="0%")
-                        stop(offset="0%" stop-color="#9300e8")
-                        stop(offset="100%" stop-color="#4a00ed ")
-                  li.skills__objekt-item
-                    span.skills__objekt-tag Jquery <br>и Vue.js
-                    svg.skills__objekt-svg(viewBox="0 0 150 150" preservAcpectRatio="none")
-                      circle(cx="75" cy="75" r="65" stroke-width="8" stroke="#454341" fill="none")
-                      circle.skills__objekt-svg-circle(cx="75" cy="75" r="65" stroke-width="20" stroke="url('#skills-gradient')" fill="none")
-                      linearGradient(id="skills-gradient" x1="0%" y1="0%" x2="100%" y2="0%")
-                        stop(offset="0%" stop-color="#9300e8")
-                        stop(offset="100%" stop-color="#4a00ed ")
+          .vallues__title
+            +image('content/rukzak.png', 'vallues__pic')
+            .vallues__inner
+              h2.vallues__title-text Чем я могу быть полезен вам
+              p.vallues__title-subtext Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+              .vallues__widget
+                #skills-component 
+      section.works
+        .container.works__container
+          .section-title.works__section-title Мои работы
+          .works__content
+            #slider-component          
       
       
       
       
-      section.portfolio
-        .container
-          h2.portfolio__title Мои работы
-          .portfolio__slider
-            .portfolio__image
-              +image('content/prevu.png', 'portfolio__pic')
-            .portfolio__script
-              .portfolio__script-number 1
-              .portfolio__script-tags
-                .portfolio__script-books
-                  .portfolio__script-tag HTML
-                  .portfolio__script-tag CSS
-                  .portfolio__script-tag Javascript
-                .portfolio__script-title Сайт школы образования
-                .portfolio__script-text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                .portfolio__script-link
-                  a.portfolio__script-item Посмотреть сайт
+      //- section.portfolio
+      //-   .container
+      //-     h2.portfolio__title Мои работы
+      //-     .portfolio__slider
+      //-       .portfolio__image
+      //-         +image('content/prevu.png', 'portfolio__pic')
+      //-       .portfolio__script
+      //-         .portfolio__script-number 1
+      //-         .portfolio__script-tags
+      //-           .portfolio__script-books
+      //-             .portfolio__script-tag HTML
+      //-             .portfolio__script-tag CSS
+      //-             .portfolio__script-tag Javascript
+      //-           .portfolio__script-title Сайт школы образования
+      //-           .portfolio__script-text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+      //-           .portfolio__script-link
+      //-             a.portfolio__script-item Посмотреть сайт
+      
+      
       section.contacts
-        .container
-          section.rewies
-            .swiper
-              .swiper__title
-                h2.rewies__title Что обо мне говорят
-              .swiper__page
-                .swiper__slide
-                  p.swiper__slide-text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                  .swiper__slide-inner
-                    .swiper__slide-photo
-                      +image('content/techer.png', 'swiper__pic')
-                    .swiper__slide-name
-                      h4.swiper__slide-name-client Ковальчук Дмитрий
-                      span.swiper__slide-name-desk Основатель Loftschool
-                .swiper__slide
-                  p.swiper__slide-text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-                  .swiper__slide-inner.swiper__slide-next
-                    .swiper__slide-photo
-                      +image('content/techers.png', 'swiper__pic')
-                    .swiper__slide-name
-                      h4.swiper__slide-name-client Ковальчук Дмитрий
-                      span.swiper__slide-name-desk Преподаватель
+        .paralax-budda
+          .parallax__layers(data-speed="0.1")
+            img.paralax__image(src=require("images/content/budda1.png"))  
+          .parallax__layers(data-speed="0.25")
+            img.paralax__image(src=require("images/content/budda2.png"))  
+          .parallax__layers(data-speed="0.35")
+            img.paralax__image(src=require("images/content/budda3.png"))  
+          .parallax__layers(data-speed="0.38")
+            img.paralax__image(src=require("images/content/budda5.png"))  
+          .parallax__layers(data-speed="0.45")
+            img.paralax__image(src=require("images/content/budda6.png"))  
+          .parallax__layers(data-speed="0.48")
+            img.paralax__image(src=require("images/content/budda7.png"))  
+           
+        .buddasection
+          .container
+            section.rewies
+              .swiper
+                .swiper__title
+                  h2.rewies__title Что обо мне говорят
+                .swiper__page
+                  .swiper__slide
+                    p.swiper__slide-text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                    .swiper__slide-inner
+                      .swiper__slide-photo
+                        +image('content/techer.png', 'swiper__pic')
+                      .swiper__slide-name
+                        h4.swiper__slide-name-client Ковальчук Дмитрий
+                        span.swiper__slide-name-desk Основатель Loftschool
+                  .swiper__slide
+                    p.swiper__slide-text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                    .swiper__slide-inner.swiper__slide-next
+                      .swiper__slide-photo
+                        +image('content/techers.png', 'swiper__pic')
+                      .swiper__slide-name
+                        h4.swiper__slide-name-client Ковальчук Дмитрий
+                        span.swiper__slide-name-desk Преподаватель
 
-                
+                  
 
-          
-          section.numbers
-            h2.numbers__title Связаться со мной
-            form.form(action="#" method="post")
-              .numbers__form-inner
+            
+            section.numbers
+              h2.numbers__title Связаться со мной
+              form.form(action="#" method="post")
+                .numbers__form-inner
+                  .numbers__form-item
+                    label.numbers__form-label(for="for-name") Введите ваше имя                                                  
+                    input.numbers__form-input(type="text" id="for-name")
+                  .numbers__form-item
+                    label.numbers__form-label(for="for-email") Введите ваш email                  
+                    input.numbers__form-input(type="email" id="for-email")
                 .numbers__form-item
-                  label.numbers__form-label(for="for-name") Введите ваше имя                                                  
-                  input.numbers__form-input(type="text" id="for-name")
-                .numbers__form-item
-                  label.numbers__form-label(for="for-email") Введите ваш email                  
-                  input.numbers__form-input(type="email" id="for-email")
-              .numbers__form-item
-                label.numbers__form-label(for="for-text") Сообщение к письму
-                textarea.numbers__form-input(name="textaria", cols="30", rows="3")
-              button.btn(type="submit" value="заказать") Отправить
+                  label.numbers__form-label(for="for-text") Сообщение к письму
+                  textarea.numbers__form-input(name="textaria", cols="30", rows="3")
+                button.btn(type="submit" value="заказать") Отправить
              
 
       
@@ -258,6 +211,9 @@ html(lang="en")
                 .footer__socials-desc  Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
                 .footer__laier-name Martin Golding
 
+
+
+    include ./templates/entry.pug
         
            
 
