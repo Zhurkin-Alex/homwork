@@ -1,4 +1,4 @@
-const paralax = document.querySelector('.parallax');
+const paralax = document.querySelector('.paralax-budda');
 const layers = parallax.children;
 
 function moveLayersDependsOnScroll(wScroll) {
@@ -14,4 +14,4 @@ function moveLayersDependsOnScroll(wScroll) {
 window.addEventListener('scroll', e=>{
     const wScroll = window.pageYOffset;
     moveLayersDependsOnScroll(wScroll);
-})
+});

@@ -48,3 +48,5 @@ new Vue({
     this.skills = data;
   }
 });
+
+

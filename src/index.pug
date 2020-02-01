@@ -7,6 +7,8 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title Журкин Алексей | main page
+    link(rel="stylesheet", type="text/css", href="slick/slick.css")
+    link(rel="stylesheet", type="text/css", href="slick/slick-theme.css")
   body
     .wrapper
       .welcome-section
@@ -144,22 +146,40 @@ html(lang="en")
                 .swiper__title
                   h2.rewies__title Что обо мне говорят
                 .swiper__page
-                  .swiper__slide
-                    p.swiper__slide-text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                    .swiper__slide-inner
-                      .swiper__slide-photo
-                        +image('content/techer.png', 'swiper__pic')
-                      .swiper__slide-name
-                        h4.swiper__slide-name-client Ковальчук Дмитрий
-                        span.swiper__slide-name-desk Основатель Loftschool
-                  .swiper__slide
-                    p.swiper__slide-text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-                    .swiper__slide-inner.swiper__slide-next
-                      .swiper__slide-photo
-                        +image('content/techers.png', 'swiper__pic')
-                      .swiper__slide-name
-                        h4.swiper__slide-name-client Ковальчук Дмитрий
-                        span.swiper__slide-name-desk Преподаватель
+                  .swiper__block
+                    .swiper__slide
+                      p.swiper__slide-text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                      .swiper__slide-inner
+                        .swiper__slide-photo
+                          +image('content/techer.png', 'swiper__pic')
+                        .swiper__slide-name
+                          h4.swiper__slide-name-client Ковальчук Дмитрий
+                          span.swiper__slide-name-desk Основатель Loftschool
+                    .swiper__slide
+                      p.swiper__slide-text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                      .swiper__slide-inner.swiper__slide-next
+                        .swiper__slide-photo
+                          +image('content/techers.png', 'swiper__pic')
+                        .swiper__slide-name
+                          h4.swiper__slide-name-client Ковальчук Дмитрий
+                          span.swiper__slide-name-desk Преподаватель
+                  .swiper__block
+                    .swiper__slide
+                      p.swiper__slide-text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                      .swiper__slide-inner
+                        .swiper__slide-photo
+                          +image('content/techer.png', 'swiper__pic')
+                        .swiper__slide-name
+                          h4.swiper__slide-name-client Ковальчук Дмитрий
+                          span.swiper__slide-name-desk Основатель Loftschool
+                    .swiper__slide
+                      p.swiper__slide-text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                      .swiper__slide-inner.swiper__slide-next
+                        .swiper__slide-photo
+                          +image('content/techers.png', 'swiper__pic')
+                        .swiper__slide-name
+                          h4.swiper__slide-name-client Ковальчук Дмитрий
+                          span.swiper__slide-name-desk Преподаватель
 
                   
 
@@ -214,8 +234,8 @@ html(lang="en")
 
 
     include ./templates/entry.pug
-        
-           
+  script(src="https://code.jquery.com/jquery-3.4.1.min.js")     
+  script(src="slick/slick.min.js")       
 
                         
           
