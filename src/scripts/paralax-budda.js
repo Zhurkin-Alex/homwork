@@ -1,5 +1,5 @@
 const paralax = document.querySelector('.paralax-budda');
-const layers = parallax.children;
+const layers = paralax.children;
 
 function moveLayersDependsOnScroll(wScroll) {
   Array.from(layers).forEach(layer => {
