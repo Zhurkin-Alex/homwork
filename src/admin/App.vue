@@ -46,7 +46,7 @@
                         .simple-input__measure %
                     .new-skill__button
                       .button(type="submit" disabled="disabled").basic-button.basic-button_circle.basic-button_disabled.basic-button_default.basic-button_flat.basic-button_primary
-
+                        .basic-button__icon-wrapper +
 
           .about-page__skill-group
             .card.skill-group
@@ -54,7 +54,7 @@
                 .category-control.skill-group__category
                   .category-control__input
                     .simple-input
-                      input.simple-input__control.simple-input__control_large(type="text" step="1"  placeholder="Название новой группы")
+                      input.simple-input__control.simple-input__control_large(type="text" step="1"  placeholder="Название новой группы" readonly="readonly")
                   .category-control__buttons 
                     button.category-control__button.category-control__button_edit   
                     button.category-control__button.category-control__button_delete   
@@ -62,11 +62,11 @@
                 table.skill-group__skills-table
                   tr.skill
                     td.skill__title
-                      .simple-input
-                        input(tupe="text" step="1"  placeholder="Название навыка").simple-input__control.simple-input__control_default
+                      .simple-input 
+                        input.simple-input__control.simple-input__control_default(tupe="text" step="1"  placeholder="Название навыка" readonly="readonly") 
                     td.skill__persent
                       .simple-input
-                        input(tupe="text" step="1"  placeholder).simple-input__control.simple-input__control_default
+                        input(tupe="number" step="1"  placeholder readonly="readonly").simple-input__control.simple-input__control_default
                         .simple-input__measure %
                     td.skill__controls
                       .skill__buttons
@@ -77,13 +77,13 @@
                     .skill__title
                       .simple-input
                         input(tupe="text" step="1" placeholder="Новый навык").simple-input__control.simple-input__control_default
-                    .new-skill__persent
+                    .new-skill__percent
                       .simple-input
                         input(tupe="number" step="1" placeholder).simple-input__control.simple-input__control_default
                         .simple-input__measure %
                     .new-skill__button
-                      button(type="submit").basik-button
-                        .basik-button__icon-wrapper.basik-button__circle
+                      button(type="submit").basik-button.basic-button_circle.basik-button_default.basik-button_flat.basik-button_primary
+                        .basic-button__icon-wrapper +
 
 
 
@@ -91,6 +91,8 @@
 </template>
 
 <style lang=postcss scoped>
+@import url("../../src/styles/mixins");
+
 /*----------------------base------------- */
 button {
   border: 0;
@@ -252,16 +254,23 @@ img {
 .inner-page__content{
   flex-grow:1;
   overflow-y:auto;
+  
+ 
+
 }
 
 /* ----about---- */
 
 .about-page{
   padding: 60px;
+  padding-bottom: 0;
 }
 .about-page__header{
   display: flex;
   align-items: center;
+}
+.about-page__content{
+   
 }
 .page-title{
   font-size: 21px;
@@ -281,6 +290,7 @@ img {
   color: #fff;
   transition: .5s cubic-bezier(0.93, 0.33, 0, 1.54);
   cursor: pointer;
+  /* background-image: linear-gradient(90.0deg, #006aed 0%, #3f35cb 100%); */
 
 }
 .basic-batton__icon-wrapper{
@@ -296,7 +306,28 @@ img {
   transition: .2s ease;
   /* background: svg-load("user.svg", fill=#00d70a, width=100%, height=100%); */
 }
-
+.basic-button_circle{
+  background: none;
+}
+.basic-button_circle .basic-button__icon-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: .2s ease;
+  font-size: 30px;
+  line-height: 30px;
+  font-weight: 600;
+  color: #ffffff;
+  background-image: linear-gradient(90.0deg, #006aed 0%, #3f35cb 100%);
+}
+.basic-button_circle.basic-button_disabled .basic-button__icon-wrapper{
+    background: #2d3c4e;
+    cursor: default;
+    opacity: .3;
+}
 .basic-batton__text{
   padding: 0 13px;
   color: #383bcf;
@@ -313,6 +344,9 @@ img {
   grid-template-columns: 1fr 1fr;
   grid-gap: 32px;
   margin-top: 58px;
+  @include tablets{
+    grid-template-columns: 1fr;
+  }
 }
 .card{
   display: flex;
@@ -346,21 +380,35 @@ img {
   position: relative;
   width: 100%;
 }
+.simple-input_disabled:after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsla(0,0%,100%,.8);
+}
 .simple-input__control{
   width: 100%;
-  color: #414c63;
+  color: #2d3c4e;
+  font-size: 1rem;
+  font-weight: inherit;
+  line-height: 2.625rem;
   background: none;
   border: none;
   transition: border .2s ease;
-  border-bottom: 1px solid #2d3c4e;
+  border-bottom: 1px solid #1f232d;
+  transition: border .2s ease;
 }
-.simple-input__control{
+.simple-input__control:read-only{
     border-color: transparent;
 }
 .simple-input__control_large{
   font-size: 18px;
   line-height: 34px;
   font-weight: 600;
+  border-bottom: 1px solid #000000;
 }
 .category-control__buttons {
   display: flex;
@@ -379,6 +427,9 @@ img {
     transition: .2s ease;
     
 }
+.category-control__button_edit {
+  background: svg-load("pencil.svg", fill=#414c63, width=100%, height=100%);
+}
 .category-control__button_save{
 background: svg-load("tick.svg", fill=#00d70a, width=100%, height=100%);
 margin-right: 20px;
@@ -388,9 +439,10 @@ background: svg-load("remove.svg", fill=#bf2929, width=100%, height=100%);
 }
 .category-control__button_delete {
   margin-left: 19px;
-  width: 15px;
+   background: svg-load("trash.svg", fill=#414c63, width=100%, height=100%);
+  /* width: 15px;
   height: 15px;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
   
 }
 
@@ -454,22 +506,31 @@ background: svg-load("remove.svg", fill=#bf2929, width=100%, height=100%);
   display: flex;
   align-items: flex-end;
 }
-.skill__title{
+.new-skill__title{
   flex-basis: 218px;
 }
-.new-skill__persent{
+.simple-input__control{
+
+}
+.simple-input__control_default{
+
+}
+.new-skill__percent{
     margin-left: 10px;
     width: 74px;
 }
 .new-skill__button{
   margin-left: 30px;
 }
-.simple-input__control_default{
-  text-align: right;
-}
+
 .basik-button__circle{
  /* width: 40px;
  height: 40px; */
+  background: none;
+  padding: 0;
+}
+.basic-button_disabled{
+  cursor: default;
 }
 /* .basik-button__icon-wrapper{
     

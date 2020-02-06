@@ -9,12 +9,14 @@ html(lang="en")
     title Журкин Алексей | main page
     link(rel="stylesheet", type="text/css", href="slick/slick.css")
     link(rel="stylesheet", type="text/css", href="slick/slick-theme.css")
+    script(src="https://code.jquery.com/jquery-3.4.1.min.js") 
+    script(src="slick/slick.min.js")
   body
     .wrapper
       .welcome-section
         .parallax
-          .parallax__layer(data-speed="0.1")
-            img.paralax__image(src=require("images/content/paralax1.png"))  
+          //- .parallax__layer(data-speed="0.1")
+          //-   img.paralax__image(src=require("images/content/paralax1.png"))  
           .parallax__layer(data-speed="0.11")
             img.paralax__image(src=require("images/content/paralax2.png"))  
           .parallax__layer(data-speed="0.13")
@@ -23,43 +25,44 @@ html(lang="en")
             img.paralax__image(src=require("images/content/paralax4.png"))  
           .parallax__layer(data-speed="0.15")
             img.paralax__image(src=require("images/content/paralax5.png"))  
-          .parallax__layer(data-speed="0.16")
+          .parallax__layer()
             img.paralax__image(src=require("images/content/paralax6.png"))  
-          .parallax__layer(data-speed="0.17")
+          .parallax__layer()
             img.paralax__image(src=require("images/content/paralax7.png"))  
-        .parasection
-          section.hero
-            .container.hero__container
-              header.hero__header
-                .hero__logo
-                  a(href="#").logo ЖА  
-                .hero__menu                
-                  - var menu = ["Главная","Обо мне","Навыки","Работы","Отзывы","Связаться"];  
-                  nav.menu
-                    ul.menu__items
-                      each item in menu
-                        li.menu__item
-                          a.menu__link #{item}              
-                  .header__close
-                    //- img.header__close-menu(src="~images/content/close.png", alt="")
-                .hero__links
-                  - var icons = ["insta", "vk", "github"];
-                  ul.socials
-                    each item in icons
-                      li.socials__item
-                        a.socials__link
-                          +icon(item, "socials__icon")
-                .burger
-                  a(href="#" class="burger__menu")
-                  +image('content/menu.png', 'burger__menu-pic')                                      
-              .hero__content
-                .user-info
-                  .user-info__desc Личный сайт <br> веб разработчика
-                  .user-info__username Журкин  <br>  Алексей
-              .hero__buttons
-                a.scroll-btn Скролл
-                  +icon('scroll', 'scroll-btn__icon')  
-          section.about
+        header.header
+          .header-container.container
+            .hero__logo
+              a(href="#").logo ЖА  
+            .hero__menu                
+              - var menu = ["Главная","Обо мне","Навыки","Работы","Отзывы","Связаться"];  
+              nav.menu
+                ul.menu__items
+                  each item in menu
+                    li.menu__item
+                      a.menu__link #{item}              
+              .header__close
+                //- img.header__close-menu(src="~images/content/close.png", alt="")
+            .hero__links
+              - var icons = ["insta", "vk", "github"];
+              ul.socials
+                each item in icons
+                  li.socials__item
+                    a.socials__link
+                      +icon(item, "socials__icon")
+            .burger
+              a(href="#" class="burger__menu")
+              +image('content/menu.png', 'burger__menu-pic')  
+        section.hero
+          .container.hero__container
+                                                
+            .hero__content
+              .user-info
+                .user-info__desc Личный сайт <br> веб разработчика
+                .user-info__username Журкин  <br>  Алексей
+            .hero__buttons
+              a.scroll-btn(href="#about") Скролл
+                +icon('scroll', 'scroll-btn__icon')  
+        section.about(id="about")
             .container.about__container
               .about__left
                 .user 
@@ -90,7 +93,7 @@ html(lang="en")
       section.vallues        
         .container
           .vallues__title
-            +image('content/rukzak.png', 'vallues__pic')
+            //- +image('content/rukzak.png', 'vallues__pic')
             .vallues__inner
               h2.vallues__title-text Чем я могу быть полезен вам
               p.vallues__title-subtext Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
@@ -100,44 +103,24 @@ html(lang="en")
         .container.works__container
           .section-title.works__section-title Мои работы
           .works__content
-            #slider-component          
-      
-      
-      
-      
-      //- section.portfolio
-      //-   .container
-      //-     h2.portfolio__title Мои работы
-      //-     .portfolio__slider
-      //-       .portfolio__image
-      //-         +image('content/prevu.png', 'portfolio__pic')
-      //-       .portfolio__script
-      //-         .portfolio__script-number 1
-      //-         .portfolio__script-tags
-      //-           .portfolio__script-books
-      //-             .portfolio__script-tag HTML
-      //-             .portfolio__script-tag CSS
-      //-             .portfolio__script-tag Javascript
-      //-           .portfolio__script-title Сайт школы образования
-      //-           .portfolio__script-text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-      //-           .portfolio__script-link
-      //-             a.portfolio__script-item Посмотреть сайт
-      
-      
+            #slider-component     
+            
+       
+            
       section.contacts
         .paralax-budda
-          .parallax__layers(data-speed="0.1")
-            img.paralax__images(src=require("images/content/budda1.png"))  
-          .parallax__layers(data-speed="0.25")
+          //- .parallax__layers(data-speed="0.1")
+          //-   img.paralax__images(src=require("images/content/budda1.png"))  
+          .parallax__layers(data-speed="0.05")
             img.paralax__images(src=require("images/content/budda2.png"))  
-          //- .parallax__layers(data-speed="0.35")
-          //-   img.paralax__image(src=require("images/content/budda3.png"))  
-          //- .parallax__layers(data-speed="0.38")
-          //-   img.paralax__image(src=require("images/content/budda5.png"))  
-          //- .parallax__layers(data-speed="0.45")
-          //-   img.paralax__image(src=require("images/content/budda6.png"))  
-          //- .parallax__layers(data-speed="0.48")
-          //-   img.paralax__image(src=require("images/content/budda7.png"))  
+          .parallax__layers(data-speed="0.2")
+            img.paralax__images(src=require("images/content/budda3.png"))  
+          .parallax__layers(data-speed="0.02")
+            img.paralax__images(src=require("images/content/budda5.png"))  
+          .parallax__layers(data-speed="0.05")
+            img.paralax__images(src=require("images/content/budda6.png"))  
+          .parallax__layers(data-speed="0.1")
+            img.paralax__images(src=require("images/content/budda7.png"))  
            
         .buddasection
           .container
@@ -145,6 +128,9 @@ html(lang="en")
               .swiper
                 .swiper__title
                   h2.rewies__title Что обо мне говорят
+                  button.rewies__btn.rewies__btn-prev(type="button" aria-label="вернуться к предыдущему отзыву")
+                  button.rewies__btn.rewies__btn-next(type="button" aria-label="следующий отзыв")
+
                 .swiper__page
                   .swiper__block
                     .swiper__slide
@@ -234,8 +220,8 @@ html(lang="en")
 
 
     include ./templates/entry.pug
-  script(src="https://code.jquery.com/jquery-3.4.1.min.js")     
-  script(src="slick/slick.min.js")       
+      
+         
 
                         
           

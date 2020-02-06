@@ -1,0 +1,32 @@
+.header{
+    /* position: fixed; */
+    padding: 45px 0;
+    width: 100%;
+    z-index: 3;
+    background-color: hsla(0,0%,100%,0);
+    box-shadow: 0 0 0 0 transparent;
+    transition: background-color .4s,padding .4s,box-shadow .4s;
+    @include tablets{
+        padding-bottom:0;
+    }
+}
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.hero__menu {
+    display: flex;
+    align-items: center;
+    @include tablets{
+        display:none
+    }
+}
+.hero__links{
+    display: flex;
+    align-items: center;
+    @include tablets{
+        margin-right:143px;
+    }
+    
+}

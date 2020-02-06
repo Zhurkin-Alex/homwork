@@ -10,6 +10,12 @@
     display: flex;
     justify-content: space-between;
     width: 30%;
+    @include tablets{
+        flex-direction: column;
+        justify-content:flex-start;
+        margin-right: 77px;
+        width: 20%;
+    }
 }
 .footer__right{
     width: 60%;
@@ -20,6 +26,10 @@
     font-size: 48px;
     font-weight: 600;
     color: #47484a;
+    @include tablets{
+    margin-bottom:31px;
+    margin-right: 0;
+    }
 }
 .footer__copyright-title{
     margin-bottom: 30px;
@@ -29,6 +39,9 @@
     font-weight: 700;
     line-height: 30px;
     text-transform: uppercase;
+    @include tablets{
+        margin-bottom:30px;
+    }
 }
 .footer__copyright-sibtitle{
     opacity: 0.15;
@@ -36,6 +49,9 @@
     font-family: "Open Sans";
     font-size: 16px;
     font-weight: 400;
+    @include tablets{
+        max-width: 125px;
+    }
 }
 .footer__nav{
     margin-bottom: 70px;

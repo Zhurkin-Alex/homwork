@@ -1,10 +1,21 @@
 .hero{
-    height: 100vh;
+    /* height: 100vh;
     width: 100%;
-    min-width:650px;
+    min-width:650px; */
     /* position: absolute;
     top: 0; */
-    position:relative;
+    /* position:relative; */
+    height: 100vh;
+    max-height: 1000px;
+    padding-top: 220px;
+    padding-bottom: 160px;
+    @include desktop{
+        padding-bottom: 160px;
+    }
+    @include tablets{
+        padding-bottom: 0;
+        padding-top:0;
+    }
     
     
 }
@@ -12,31 +23,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
-}
-.hero__header{
-    display:flex;
-    justify-content:space-between;
-    margin-top:64px;
+    height: 100%; 
+    align-items:center;
     @include tablets{
-        /* justify-content:flex-start; */
-        align-items: center;
-        justify-content:stretch;
-    }
-
-}
-.hero__menu {
-    display: flex;
-    align-items: center;
-    @include tablets{
-        display:none
-    }
-}
-.hero__links{
-    display: flex;
-    align-items: center;
-    @include tablets{
-        margin-right:143px;
+        justify-content:flex-start;
     }
 }
 
@@ -46,7 +36,9 @@
 
 
 
-.header_fullcreen{
+
+
+/* .header_fullcreen{
     .menu{
       display: flex;
       align-items: center;
@@ -81,7 +73,7 @@
         left:rem(19px);
         z-index: 46;
       }
-}
+} */
 
 
 
@@ -134,13 +126,21 @@
 .hero__content{
     display:flex;
     justify-content:center;
+    @include tablets{
+        padding-top: 181px;
+    }
 }
 .hero__buttons{
     display:flex;
     justify-content:center;
+    @include tablets{
+        display:none;
+    }
 }
 .scroll-btn__icon{
     width: 20px;
     height: 30px;
     fill:#5b6275;
+    transition: fill .4s;
+    animation: bounce .8s infinite ease-in-out;
 }
