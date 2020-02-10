@@ -176,13 +176,13 @@ html(lang="en")
                 .numbers__form-inner
                   .numbers__form-item
                     label.numbers__form-label(for="for-name") Введите ваше имя                                                  
-                    input.numbers__form-input(type="text" id="for-name")
+                    input.numbers__form-input(type="text" id="for-name" required="false")
                   .numbers__form-item
                     label.numbers__form-label(for="for-email") Введите ваш email                  
-                    input.numbers__form-input(type="email" id="for-email")
+                    input.numbers__form-input(type="email" id="for-email" v-model="email" required="false" error-message="errors.email"  icon="envelope")
                 .numbers__form-item
                   label.numbers__form-label(for="for-text") Сообщение к письму
-                  textarea.numbers__form-input(name="textaria", cols="30", rows="3")
+                  textarea.numbers__form-input(name="textaria", cols="30", rows="3" required="false")
                 button.btn(type="submit" value="заказать") Отправить
              
 
