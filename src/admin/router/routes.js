@@ -24,19 +24,21 @@ export default [
       }
     },
     {
-      path: "/works",
-      component: () => import("../components/boxworks.vue"),
-      meta: {
-        title: "Блок «Работы»"
-      }
-    },
-    {
-      path: "/reviews",
+      path: "/boxreviews",
       component: () => import("../components/boxrewies.vue"),
       meta: {
         title: "Блок «Отзывы»"
       }
     },
+    {
+      path: "/boxworks",
+      component: () => import("../components/boxworks.vue"),
+      meta: {
+        title: "Блок «Работы»"
+      }
+    },
+    
+   
     // {
     //   path: "/login",
     //   component: () => import("components/pages/login.vue"),

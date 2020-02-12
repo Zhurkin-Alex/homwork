@@ -10,6 +10,7 @@
                 .card__media
                     .work-item__prewiew
                 .card__body
+                h1 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
          
         
 </template>

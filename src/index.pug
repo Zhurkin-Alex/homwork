@@ -32,14 +32,21 @@ html(lang="en")
         header.header
           .header-container.container
             .hero__logo
-              a(href="#").logo ЖА  
-            .hero__menu                
-              - var menu = ["Главная","Обо мне","Навыки","Работы","Отзывы","Связаться"];  
+              a(href="#").logo ЖА 
+            .hero__menu 
               nav.menu
                 ul.menu__items
-                  each item in menu
+                  - var menuLinks = ['Главная', "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"];
+                  each item in menuLinks 
                     li.menu__item
-                      a.menu__link #{item}              
+                      a(href="#").menu__link #{item} 
+            //- .hero__menu                
+            //-   - var menu = ["Главная","Обо мне","Навыки","Работы","Отзывы","Связаться"];  
+            //-   nav.menu
+            //-     ul.menu__items
+            //-       each item in menu
+            //-         li.menu__item
+            //-           a.menu__link #{item}              
               .header__close
                 //- img.header__close-menu(src="~images/content/close.png", alt="")
             .hero__links

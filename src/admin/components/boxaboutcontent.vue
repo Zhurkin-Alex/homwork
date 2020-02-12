@@ -3,12 +3,13 @@
           .about-page__skill-group
             .card.skill-group
               .card__header
-                .category-control
+                
+                form(@submit.prevent="addNewCategory").category-control
                   .category-control__input
                     .simple-input
-                      input.simple-input__control.simple-input__control_large(type="text" step="1" placeholder="Название новой группы")
+                      input.simple-input__control.simple-input__control_large(type="text" step="1" placeholder="Название новой группы" v-model="title")
                   .category-control__buttons
-                    button.category-control__button.category-control__button_save
+                    button.category-control__button.category-control__button_save(type="submit")
                     button.category-control__button.category-control__button_cancel
               .card__body
                 .skill-group__new-skill
@@ -63,7 +64,21 @@
          
         
 </template>
-
+<script>
+import { mapActions } from "vuex";
+export default {
+  data: () => ({
+    title: ""
+  }),
+  methods:{
+    ...mapActions("categories", ["addCategory"]),
+    addNewCategory() {
+      // console.log(this.title)
+      this.addCategory(this.title);
+    }
+  }
+}
+</script>
 <style lang="pcss" scoped>
 @import url("../../styles/mixins");
  

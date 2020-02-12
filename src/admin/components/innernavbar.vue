@@ -20,9 +20,9 @@ export default {
   data() {
     return {
       tabs: [
-        { title: "Обо мне", href: "./boxabouts.vue" },
-        { title: "Отзывы", href: "./boxrewies.vue" },
-        { title: "Работы", href: "./boxworks.vue" }
+        { title: "Обо мне", href: "/" },
+        { title: "Отзывы", href: "/boxreviews" },
+        { title: "Работы", href: "/boxworks" }
       ]
     };
   }
