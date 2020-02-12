@@ -74,7 +74,7 @@ export default {
     ...mapActions("categories", ["addCategory"]),
     addNewCategory() {
       // console.log(this.title)
-      this.addCategory(this.title);
+      this.addCategory(this.title)
     }
   }
 }

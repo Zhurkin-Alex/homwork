@@ -6,11 +6,17 @@ export default {
 
     mutations: {},
   
-    actions:{
-         addCategory(store, title) {
-
-            //  await this.$axios.post("/categories");
-            console.log(title);
+    actions: {
+        async addCategory(store, title) {
+            try{
+                const response = await this.$axios.post("/categories", { title });  
+            } catch(error){
+                throw new Errow(
+                    error.response.data.error ||  error.response.data.message
+                );
+            }
+                 
+            
         }
     }
 };
