@@ -39,11 +39,11 @@ export default [
     },
     
    
-    // {
-    //   path: "/login",
-    //   component: () => import("components/pages/login.vue"),
-    //   meta: {
-    //     public: true
-    //   }
-    // }
+    {
+      path: "/login",
+      component: () => import("../components/login.vue"),
+      meta: {
+        public: true
+      }
+    }
   ];

@@ -9,6 +9,10 @@ html(lang="en")
     title Журкин Алексей | main page
     link(rel="stylesheet", type="text/css", href="slick/slick.css")
     link(rel="stylesheet", type="text/css", href="slick/slick-theme.css")
+    style.
+      body {
+        overflow: auto;        
+      }
     script(src="https://code.jquery.com/jquery-3.4.1.min.js") 
     script(src="slick/slick.min.js")
   body
@@ -33,22 +37,31 @@ html(lang="en")
           .header-container.container
             .hero__logo
               a(href="#").logo ЖА 
+            
             .hero__menu 
               nav.menu
                 ul.menu__items
-                  - var menuLinks = ['Главная', "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"];
-                  each item in menuLinks 
-                    li.menu__item
-                      a(href="#").menu__link #{item} 
-            //- .hero__menu                
-            //-   - var menu = ["Главная","Обо мне","Навыки","Работы","Отзывы","Связаться"];  
-            //-   nav.menu
-            //-     ul.menu__items
-            //-       each item in menu
-            //-         li.menu__item
-            //-           a.menu__link #{item}              
+                  li.menu__item
+                    a(href="#main").menu__link Главная
+                  li.menu__item
+                    a(href="#about").menu__link Обо мне
+                  li.menu__item
+                    a(href="#skills").menu__link Навыки
+                  li.menu__item
+                    a(href="#work").menu__link Работы
+                  li.menu__item
+                    a(href="#revies").menu__link Отзывы
+                  li.menu__item
+                    a(href="#contact").menu__link Связаться
+                  
+                  //- - var menuLinks = ['Главная', "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"];
+                  //- each item in menuLinks 
+                  //-   li.menu__item
+                  //-     a(href="#").menu__link #{item} 
               .header__close
-                //- img.header__close-menu(src="~images/content/close.png", alt="")
+                +image('content/close.png', 'close') 
+                
+            
             .hero__links
               - var icons = ["insta", "vk", "github"];
               ul.socials
@@ -59,7 +72,7 @@ html(lang="en")
             .burger
               a(href="#" class="burger__menu")
               +image('content/menu.png', 'burger__menu-pic')  
-        section.hero
+        section.hero(id="main")
           .container.hero__container
                                                 
             .hero__content
@@ -97,7 +110,7 @@ html(lang="en")
                 .about__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
 
 
-      section.vallues        
+      section.vallues(id="skills")        
         .container
           .vallues__title
             //- +image('content/rukzak.png', 'vallues__pic')
@@ -106,7 +119,7 @@ html(lang="en")
               p.vallues__title-subtext Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
               .vallues__widget
                 #skills-component 
-      section.works
+      section.works(id="work")
         .container.works__container
           .section-title.works__section-title Мои работы
           .works__content
@@ -131,7 +144,7 @@ html(lang="en")
            
         .buddasection
           .container
-            section.rewies
+            section.rewies(id="revies") 
               .swiper
                 .swiper__title
                   h2.rewies__title Что обо мне говорят
@@ -177,7 +190,7 @@ html(lang="en")
                   
 
             
-            section.numbers
+            section.numbers(id="contact") 
               h2.numbers__title Связаться со мной
               form.form(action="#" method="post")
                 .numbers__form-inner

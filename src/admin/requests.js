@@ -1,8 +1,14 @@
 import axios from "axios";
 
+const token = localStorage.getItem("token");
 
-const request = axios.create({
-    baseURL: "https://webdev-api.loftschool.com/"
+if (!token) console.warn("Отсутствует токен")
+
+const requests = axios.create({
+  baseURL: "https://webdev-api.loftschool.com/",
+  headers: {
+    "Authorization": `Bearer ${token}`
+  }
 });
 
-export default request;
+export default requests;

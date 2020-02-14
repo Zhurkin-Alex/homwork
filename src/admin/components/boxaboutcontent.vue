@@ -65,19 +65,34 @@
         
 </template>
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapState } from "vuex";
 export default {
+  components:{
+   
+  },
   data: () => ({
     title: ""
   }),
+  computed : {
+    ...mapState("categories", {
+      categories: state => state.categories
+    })
+  },
+  created() {
+   this.fetchCategories();
+  },
   methods:{
-    ...mapActions("categories", ["addCategory"]),
-    addNewCategory() {
-      // console.log(this.title)
-      this.addCategory(this.title)
+    ...mapActions("categories", ["addCategory", "fetchCategories" ]),
+    async addNewCategory() {
+      try {
+        await this.addCategory(this.title)
+      } catch (error) {
+        alert(error.massage);
+      }
+     
     }
   }
-}
+};
 </script>
 <style lang="pcss" scoped>
 @import url("../../styles/mixins");

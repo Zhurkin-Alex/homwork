@@ -8,6 +8,7 @@ import "./scripts/skills";
 import "./scripts/works";
 import "./scripts/paralax-budda";
 import "./scripts/revues";
+import "./scripts/burger-menu";
 
 
 
