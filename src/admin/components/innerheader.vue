@@ -1,27 +1,42 @@
 <template lang="pug">
     header.header
+      .container.header__container
         .header__avatar
           img.header__image(src="../../images/content/me200.jpg", alt="avatar")
         .header__content
           .header__username Журкин Алексей
           .header__title Панель администрирования
-          a.header__exit-link Выйти   
+          a.header__exit-link(@click="logoutUser") Выйти   
 </template>
 
 
 
 
 <script>
-
+import { mapActions } from "vuex";
+export default {
+  methods: {
+    ...mapActions("user", ["logout"]),
+    logoutUser() {
+      this.logout();
+      this.$router.replace("/login");
+    }
+  }
+};
 </script>
 
 <style lang="pcss" scope>
-.header{
+
+.header__container{
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.header{
+  display: flex;
+  justify-content: center;
   height: 80px;
-  padding: 0 60px;
+  /* padding: 0 60px; */
   color:#fff;
   background-image: linear-gradient(90.0deg, #3e3e59 0%, #454573 100%);
 }

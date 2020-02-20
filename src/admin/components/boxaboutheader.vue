@@ -1,16 +1,86 @@
 <template lang="pug">
     .about-page__header
+      
+      .about-page__add-group
         h1.page-title Блок «Обо мне»
-        .about-page__add-group
-            button(type="button").basic-batton.basic-batton_circle.basic-batton_small.basic-batton_flat.basic-batton_primary
-                .basic-batton__icon-wrapper +
-                .basic-batton__text Добавить группу
-         
+        button(type="button").basic-batton.basic-batton_circle.basic-batton_small.basic-batton_flat.basic-batton_primary
+          .basic-batton__icon-wrapper +
+          .basic-batton__text Добавить группу
+      form(@submit.prevent="addNewCategory").category-control
+        input(type="text" v-model="title")
+        input(type="submit" value="Добавить") 
+
+      ul.skill-list
+        li.skill-list__item(v-for="category in categories" :key="category.id")
+          skills-group(
+            :category="category"
+          )   
         
 </template>
-
+<script>
+import { mapActions, mapState } from "vuex";
+export default {
+  components:{
+   skillsGroup: () => import("./skills-group")
+  },
+  data: () => ({
+    title: ""
+  }),
+  computed : {
+    ...mapState("categories", {
+      categories: state => state.categories
+    })
+  },
+  created() {
+   this.fetchCategories();
+  },
+  methods:{
+    ...mapActions("categories", ["addCategory", "fetchCategories" ]),
+    async addNewCategory() {
+      try {
+        await this.addCategory(this.title)
+      } catch (error) {
+        alert(error.massage);
+      }
+     
+    }
+  }
+};
+</script>
 
 <style lang="pcss" scoped>
+@import "../../styles/mixins";
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  @include phones {
+    margin-left: 0;
+  }
+}
+
+.skill-list__item {
+  width: calc(100% / 2 - 30px);
+  margin-left: 30px;
+  margin-bottom: 30px;
+
+  &.loading {
+    opacity: 0.5;
+    pointer-events: none;
+    filter: grayscale(100%);
+  }
+
+  /* @include phones {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 12px;
+  } */
+}
+.category-control{
+  /* display: flex;
+  justify-content: space-between; */
+}
 button[type="button"] {
   cursor: pointer;
   background-color: transparent;
@@ -18,16 +88,20 @@ button[type="button"] {
 }
 .about-page__header{
   display: flex;
-  align-items: center;
+  /* align-items: center; */
+  flex-direction: column;
 }
 
 .page-title{
   font-size: 21px;
   font-weight: 700;
   color: #414c63;
+  margin-right: 3.75rem;
 }
 .about-page__add-group{
-  margin-left: 65px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 3.75rem;
 
 }
 .basic-batton{

@@ -1,98 +1,98 @@
 <template lang="pug">
-    .about-page__content
-          .about-page__skill-group
-            .card.skill-group
-              .card__header
+    //- .about-page__content
+    //-       .about-page__skill-group
+    //-         .card.skill-group
+    //-           .card__header
                 
-                form(@submit.prevent="addNewCategory").category-control
-                  .category-control__input
-                    .simple-input
-                      input.simple-input__control.simple-input__control_large(type="text" step="1" placeholder="Название новой группы" v-model="title")
-                  .category-control__buttons
-                    button.category-control__button.category-control__button_save(type="submit")
-                    button.category-control__button.category-control__button_cancel
-              .card__body
-                .skill-group__new-skill
-                  form.new-skill
-                    .new-skill__title
-                      .simple-input.simple-input_disabled
-                        input.simple-input__control.simple-input__control_default(type="text" step="1" placeholder="Новый навык")
-                    .new-skill__percent
-                      .simple-input.simple-input_disabled
-                        input.simple-input__control.simple-input__control_default(type="number" step="1" placeholder="100")
-                        .simple-input__measure %
-                    .new-skill__button
-                      .button(type="submit" disabled="disabled").basic-button.basic-button_circle.basic-button_disabled.basic-button_default.basic-button_flat.basic-button_primary
-                        .basic-button__icon-wrapper +
+    //-             form(@submit.prevent="addNewCategory").category-control
+    //-               .category-control__input
+    //-                 .simple-input
+    //-                   input.simple-input__control.simple-input__control_large(type="text" step="1" placeholder="Название новой группы" v-model="title")
+    //-               .category-control__buttons
+    //-                 button.category-control__button.category-control__button_save(type="submit")
+    //-                 button.category-control__button.category-control__button_cancel
+    //-           .card__body
+    //-             .skill-group__new-skill
+    //-               form.new-skill
+    //-                 .new-skill__title
+    //-                   .simple-input.simple-input_disabled
+    //-                     input.simple-input__control.simple-input__control_default(type="text" step="1" placeholder="Новый навык")
+    //-                 .new-skill__percent
+    //-                   .simple-input.simple-input_disabled
+    //-                     input.simple-input__control.simple-input__control_default(type="number" step="1" placeholder="100")
+    //-                     .simple-input__measure %
+    //-                 .new-skill__button
+    //-                   .button(type="submit" disabled="disabled").basic-button.basic-button_circle.basic-button_disabled.basic-button_default.basic-button_flat.basic-button_primary
+    //-                     .basic-button__icon-wrapper +
 
-          .about-page__skill-group
-            .card.skill-group
-              .card__header
-                .category-control.skill-group__category
-                  .category-control__input
-                    .simple-input
-                      input.simple-input__control.simple-input__control_large(type="text" step="1"  placeholder="Название новой группы" readonly="readonly")
-                  .category-control__buttons 
-                    button.category-control__button.category-control__button_edit   
-                    button.category-control__button.category-control__button_delete   
-              .card__body
-                table.skill-group__skills-table
-                  tr.skill
-                    td.skill__title
-                      .simple-input 
-                        input.simple-input__control.simple-input__control_default(tupe="text" step="1"  placeholder="Название навыка" readonly="readonly") 
-                    td.skill__persent
-                      .simple-input
-                        input(tupe="number" step="1"  placeholder readonly="readonly").simple-input__control.simple-input__control_default
-                        .simple-input__measure %
-                    td.skill__controls
-                      .skill__buttons
-                        button.skill__button.skill__button_edit
-                        button.skill__button.skill__button_remove
-                .skill-group__new-skill
-                  form.new-skill
-                    .skill__title
-                      .simple-input
-                        input(tupe="text" step="1" placeholder="Новый навык").simple-input__control.simple-input__control_default
-                    .new-skill__percent
-                      .simple-input
-                        input(tupe="number" step="1" placeholder).simple-input__control.simple-input__control_default
-                        .simple-input__measure %
-                    .new-skill__button
-                      button(type="submit").basik-button.basic-button_circle.basik-button_default.basik-button_flat.basik-button_primary
-                        .basic-button__icon-wrapper +
+    //-       .about-page__skill-group
+    //-         .card.skill-group
+    //-           .card__header
+    //-             .category-control.skill-group__category
+    //-               .category-control__input
+    //-                 .simple-input
+    //-                   input.simple-input__control.simple-input__control_large(type="text" step="1"  placeholder="Название новой группы" readonly="readonly")
+    //-               .category-control__buttons 
+    //-                 button.category-control__button.category-control__button_edit   
+    //-                 button.category-control__button.category-control__button_delete   
+    //-           .card__body
+    //-             table.skill-group__skills-table
+    //-               tr.skill
+    //-                 td.skill__title
+    //-                   .simple-input 
+    //-                     input.simple-input__control.simple-input__control_default(tupe="text" step="1"  placeholder="Название навыка" readonly="readonly") 
+    //-                 td.skill__persent
+    //-                   .simple-input
+    //-                     input(tupe="number" step="1"  placeholder readonly="readonly").simple-input__control.simple-input__control_default
+    //-                     .simple-input__measure %
+    //-                 td.skill__controls
+    //-                   .skill__buttons
+    //-                     button.skill__button.skill__button_edit
+    //-                     button.skill__button.skill__button_remove
+    //-             .skill-group__new-skill
+    //-               form.new-skill
+    //-                 .skill__title
+    //-                   .simple-input
+    //-                     input(tupe="text" step="1" placeholder="Новый навык").simple-input__control.simple-input__control_default
+    //-                 .new-skill__percent
+    //-                   .simple-input
+    //-                     input(tupe="number" step="1" placeholder).simple-input__control.simple-input__control_default
+    //-                     .simple-input__measure %
+    //-                 .new-skill__button
+    //-                   button(type="submit").basik-button.basic-button_circle.basik-button_default.basik-button_flat.basik-button_primary
+    //-                     .basic-button__icon-wrapper +
          
         
 </template>
 <script>
-import { mapActions, mapState } from "vuex";
-export default {
-  components:{
+// import { mapActions, mapState } from "vuex";
+// export default {
+//   components:{
    
-  },
-  data: () => ({
-    title: ""
-  }),
-  computed : {
-    ...mapState("categories", {
-      categories: state => state.categories
-    })
-  },
-  created() {
-   this.fetchCategories();
-  },
-  methods:{
-    ...mapActions("categories", ["addCategory", "fetchCategories" ]),
-    async addNewCategory() {
-      try {
-        await this.addCategory(this.title)
-      } catch (error) {
-        alert(error.massage);
-      }
+//   },
+//   data: () => ({
+//     title: ""
+//   }),
+//   computed : {
+//     ...mapState("categories", {
+//       categories: state => state.categories
+//     })
+//   },
+//   created() {
+//    this.fetchCategories();
+//   },
+//   methods:{
+//     ...mapActions("categories", ["addCategory", "fetchCategories" ]),
+//     async addNewCategory() {
+//       try {
+//         await this.addCategory(this.title)
+//       } catch (error) {
+//         alert(error.massage);
+//       }
      
-    }
-  }
-};
+//     }
+//   }
+// };
 </script>
 <style lang="pcss" scoped>
 @import url("../../styles/mixins");
@@ -349,9 +349,9 @@ background: svg-load("remove.svg", fill=#bf2929, width=100%, height=100%);
   color: #ffffff;
   background-image: linear-gradient(90.0deg, #006aed 0%, #3f35cb 100%);
 }
-.basic-button_circle.basic-button_disabled .basic-button__icon-wrapper{
+/* .basic-button_circle.basic-button_disabled .basic-button__icon-wrapper{
     background: #2d3c4e;
     cursor: default;
     opacity: .3;
-}
+} */
 </style>

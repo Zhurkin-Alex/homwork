@@ -1,7 +1,7 @@
 <template lang="pug">
     .about-page
         boxaboutheader
-        boxaboutcontent
+        //- boxaboutcontent
          
         
 </template>

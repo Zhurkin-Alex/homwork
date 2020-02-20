@@ -1,19 +1,21 @@
 script(type="text/x-template")#skills-list
     .values__widget-container
         ul.skills
-            li.skills__item(v-for="skill in skills" :key="skill.skillsGroup")
+            li.skills__item(
+                v-for="skill in skills" :key="skill.skillsGroup"
+                v-if="skill.skills.length"
+                )
                 skills-row(
                     :skill="skill"
                 )
 
 script(type="text/x-template")#skills-row
     .skills-row
-        .skills-row__title {{skill.skillsGroup}}
+        .skills-row__title {{skill.category}}
         ul.skills-row__list
-            li.skills-row__item(v-for="(skillPercent, skillName) in skill.skills")
+            li.skills-row__item(v-for="skillItem in skill.skills")
                 skill(
-                    :skillName="skillName"
-                    :skillPercent="skillPercent"
+                    :skill="skillItem"
                 )
 
 script(type="text/x-template")#skill
@@ -24,75 +26,5 @@ script(type="text/x-template")#skill
             linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0")
                 stop(offset="0%" stop-color="#5500f2")
                 stop(offset="100%" stop-color="#8f00ef")
-        .skill__circle-text {{skillName}}
+        .skill__circle-text {{skill.title}}
 
-//- .skills__objekt
-//-     h3.skills__objekt-title Front-end
-//-     ul.skills__objekt-inner
-//-     li.skills__objekt-item
-//-         span.skills__objekt-tag HTML5
-//-         svg.skills__objekt-svg(viewBox="0 0 150 150" preservAcpectRatio="none")
-//-         circle(cx="75" cy="75" r="65" stroke-width="8" stroke="#454341" fill="none")
-//-         circle.skills__objekt-svg-circle(cx="75" cy="75" r="65" stroke-width="20" stroke="url('#skills-gradient')" fill="none")
-//-         linearGradient(id="skills-gradient" x1="0%" y1="0%" x2="100%" y2="0%")
-//-             stop(offset="0%" stop-color="#9300e8")
-//-             stop(offset="100%" stop-color="#4a00ed ")
-//-     li.skills__objekt-item
-//-         span.skills__objekt-tag CSS3
-//-         svg.skills__objekt-svg(viewBox="0 0 150 150" preservAcpectRatio="none")
-//-         circle(cx="75" cy="75" r="65" stroke-width="8" stroke="#454341" fill="none")
-//-         circle.skills__objekt-svg-circle(cx="75" cy="75" r="65" stroke-width="20" stroke="url('#skills-gradient')" fill="none")
-//-         linearGradient(id="skills-gradient" x1="0%" y1="0%" x2="100%" y2="0%")
-//-             stop(offset="0%" stop-color="#9300e8")
-//-             stop(offset="100%" stop-color="#4a00ed ")
-//-     li.skills__objekt-item
-//-         span.skills__objekt-tag Javascript
-//-         svg.skills__objekt-svg(viewBox="0 0 150 150" preservAcpectRatio="none")
-//-         circle(cx="75" cy="75" r="65" stroke-width="8" stroke="#454341" fill="none")
-//-         circle.skills__objekt-svg-circle(cx="75" cy="75" r="65" stroke-width="20" stroke="url('#skills-gradient')" fill="none")
-//-         linearGradient(id="skills-gradient" x1="0%" y1="0%" x2="100%" y2="0%")
-//-             stop(offset="0%" stop-color="#9300e8")
-//-             stop(offset="100%" stop-color="#4a00ed ")
-//-     li.skills__objekt-item
-//-         span.skills__objekt-tag Jquery <br>и Vue.js
-//-         svg.skills__objekt-svg(viewBox="0 0 150 150" preservAcpectRatio="none")
-//-         circle(cx="75" cy="75" r="65" stroke-width="8" stroke="#454341" fill="none")
-//-         circle.skills__objekt-svg-circle(cx="75" cy="75" r="65" stroke-width="20" stroke="url('#skills-gradient')" fill="none")
-//-         linearGradient(id="skills-gradient" x1="0%" y1="0%" x2="100%" y2="0%")
-//-             stop(offset="0%" stop-color="#9300e8")
-//-             stop(offset="100%" stop-color="#4a00ed ")
-//- .skills__objekt
-//-     h3.skills__objekt-title Workflow
-//-     ul.skills__objekt-inner
-//-     li.skills__objekt-item
-//-         span.skills__objekt-tag HTML5
-//-         svg.skills__objekt-svg(viewBox="0 0 150 150" preservAcpectRatio="none")
-//-         circle(cx="75" cy="75" r="65" stroke-width="8" stroke="#454341" fill="none")
-//-         circle.skills__objekt-svg-circle(cx="75" cy="75" r="65" stroke-width="20" stroke="url('#skills-gradient')" fill="none")
-//-         linearGradient(id="skills-gradient" x1="0%" y1="0%" x2="100%" y2="0%")
-//-             stop(offset="0%" stop-color="#9300e8")
-//-             stop(offset="100%" stop-color="#4a00ed ")
-//-     li.skills__objekt-item
-//-         span.skills__objekt-tag CSS3
-//-         svg.skills__objekt-svg(viewBox="0 0 150 150" preservAcpectRatio="none")
-//-         circle(cx="75" cy="75" r="65" stroke-width="8" stroke="#454341" fill="none")
-//-         circle.skills__objekt-svg-circle(cx="75" cy="75" r="65" stroke-width="20" stroke="url('#skills-gradient')" fill="none")
-//-         linearGradient(id="skills-gradient" x1="0%" y1="0%" x2="100%" y2="0%")
-//-             stop(offset="0%" stop-color="#9300e8")
-//-             stop(offset="100%" stop-color="#4a00ed ")
-//-     li.skills__objekt-item
-//-         span.skills__objekt-tag Javascript
-//-         svg.skills__objekt-svg(viewBox="0 0 150 150" preservAcpectRatio="none")
-//-         circle(cx="75" cy="75" r="65" stroke-width="8" stroke="#454341" fill="none")
-//-         circle.skills__objekt-svg-circle(cx="75" cy="75" r="65" stroke-width="20" stroke="url('#skills-gradient')" fill="none")
-//-         linearGradient(id="skills-gradient" x1="0%" y1="0%" x2="100%" y2="0%")
-//-             stop(offset="0%" stop-color="#9300e8")
-//-             stop(offset="100%" stop-color="#4a00ed ")
-//-     li.skills__objekt-item
-//-         span.skills__objekt-tag Jquery <br>и Vue.js
-//-         svg.skills__objekt-svg(viewBox="0 0 150 150" preservAcpectRatio="none")
-//-         circle(cx="75" cy="75" r="65" stroke-width="8" stroke="#454341" fill="none")
-//-         circle.skills__objekt-svg-circle(cx="75" cy="75" r="65" stroke-width="20" stroke="url('#skills-gradient')" fill="none")
-//-         linearGradient(id="skills-gradient" x1="0%" y1="0%" x2="100%" y2="0%")
-//-             stop(offset="0%" stop-color="#9300e8")
-//-             stop(offset="100%" stop-color="#4a00ed ")
