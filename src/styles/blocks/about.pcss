@@ -7,19 +7,31 @@
     display:flex;
     padding-top: 170px;
     padding-bottom: 270px;
-    
+    position:relative;
+    @include tablets{
+        padding-bottom:148px;
+        padding-top:5px;
+    }
 }
 .about__container{
     height:100%;
     display:flex;
     align-items:center;
-    justify-content: space-between;
+    justify-content: center;
+    @include desktop{
+        justify-content:flex-start;
+    }
 }
 .about__left{
  width:30%;
 }
 .about__right{
-    width:60%;
+    max-width:517px;
+    margin-left: 151px;
+    @include desktop{
+        width:45%; 
+        margin-left: 167px;
+    }
 }
 
 

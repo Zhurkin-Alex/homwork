@@ -1,5 +1,9 @@
 .menu__items{
     display: flex;   
+    @include tablets{
+        display: flex;
+     flex-wrap: wrap;
+    }
 }
 .menu__link{
     color: #464d62;

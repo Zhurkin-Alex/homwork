@@ -1,0 +1,159 @@
+.vallues{
+    padding: 151px 0 179px 0;
+    @include tablets{
+        padding: 118px 0 301px;
+    }
+       
+    
+}
+.vallues__pic{
+    position: absolute;
+    left: -150px;
+    max-width: 712px;
+    max-height: 627px;
+    @include desktop{
+        left: -240px;
+    }
+    
+}
+.vallues__title{
+    /* padding-left: 65vh; */
+    position: relative;
+    
+}
+.vallues__inner{
+    padding-left:35%;
+    
+     &:before{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        /* transform: translateX(-50%); */
+        width: 712px;
+        height: 627px;
+        background-image: url("../images/content/rukzak.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        @include desktopHd{
+        left: -150px;
+        }
+        @include desktop{
+            width: 700px;
+            height: 630px;
+            left: -290px;
+            bottom: 0;
+            transform: none;
+        }
+        @include tablets{
+            bottom: -305px;
+            left:31%;
+            width: 316px;
+            height: 281px;
+        }
+     }
+
+     @include desktop{
+        padding-left: 25%;
+    }
+    @include tablets{
+        padding-left: 0;
+    }
+}
+.vallues__title-text{
+    margin-bottom: 60px;
+    font-size: 30px;
+    font-weight: 700;
+    @include tablets{
+        max-width: 35%;
+        margin: 0 auto 31px;
+        text-align:center;
+    }
+    
+}
+.vallues__title-subtext{
+    margin-bottom: 96px;
+    color: #464d62;
+    font-family: "Open Sans - Semibold";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+    max-width:64%;
+    @include desktop{
+        margin-bottom: 68px;
+    }
+    @include tablets {
+       
+        max-width: 60%;
+        margin: 0 auto 60px;
+        text-align:center;
+    }
+}
+
+.vallues__widget {
+    display: flex;
+    padding-left:124px;
+    /* justify-content: flex-end; */
+    @include tablets {
+        padding:0;
+    }
+}
+  
+.values__widget-container {
+    /* width: 66%; */
+    @include tablets {
+      width: 95%;
+    }
+}
+/* .skills__content{
+    padding-left:125px;
+} */
+/* .skills__objekt{
+   margin-bottom:58px; 
+   &:last-child{
+    margin-bottom:0;
+   }
+} */
+/* .skills__objekt-title{
+    margin-bottom: 50px;
+    color: #464d62;
+    font-family: "Open Sans";
+    font-size: 24px;
+    font-weight: 700;
+}
+.skills__objekt-inner{
+    display: flex;
+    flex-wrap: wrap;
+}
+.skills__objekt-item{
+    margin: 0 68px 58px 0;
+    width: 134px;
+    height: 134px;
+    position: relative;
+    opacity: 0.5;
+    color: #464d62;
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    @include desktop{
+        margin: 0 41px 58px 0;
+    }
+}
+.skills__objekt-tag{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;    
+}
+.skills__objekt-svg{
+    width: 134px;
+    height: 134px;
+}
+.skills__objekt-svg-circle{
+    stroke-dasharray: 380;
+    stroke-dashoffset: 75;
+} */
+
+

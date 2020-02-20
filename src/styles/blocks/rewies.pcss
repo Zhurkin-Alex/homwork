@@ -8,14 +8,60 @@
     display:flex;
     flex-direction:column;
 }
+.swiper__block{
+    display:flex;
+}
+.swiper__title{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    
+}
 .rewies__title{
     font-size: 30px;
     font-weight: 700;
+    flex-basis: 50%;
 }
+.rewies__btn{
+    /* display:none; */
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #414c63;
+    border-radius: 100%;
+    background-color: transparent;
+    transition: background-color .4s;
+    &:after{
+        position: absolute;
+        content: "";
+        width: 8px;
+        height: 10px;
+        background: svg-load("arrow-down.svg", fill=#586ed3, width=100%, height=100%);
+        background-size: contain;
+        background-repeat: no-repeat;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+.rewies__btn-prev{
+    margin-right: 30px;
+    &:after{
+        transform: translate(-50%,-50%) rotate(180deg);
+    }
+}
+
 .swiper__page{
     display:flex;
     position:relative;
     margin-top:101px;
+}
+.slick-initialized .slick-slide{
+    display:flex;
+}
+.slick-prev:before, .slick-next:before{
+    font-size: 42px;
+    
 }
 .swiper__slide{
     position:relative;
@@ -74,4 +120,50 @@
 }
 .swiper__slide-next{
     padding-top:60px;
+}
+/* .slick-prev:before {
+ 
+    top: -254px;
+    left: 515px;
+    width: 3.125rem;
+    height: 3.125rem;
+    border: 1px solid #414c63;
+    border-radius: 100%;
+    background-color: transparent;
+    color: transparent;
+   
+        position: absolute;
+        content: "";
+        
+        background: svg-load("arrow-down.svg", fill=#black, width=50%, height=50%);
+        background-size: contain;
+        background-repeat: no-repeat;
+        
+        transform: translate(-50%,-50%);
+    
+} */
+
+.slick-prev{
+    top: -139px;
+    left: 498px;
+    color: transparent;
+    &:before{
+        font-size: 57px;
+        color: transparent;
+    }
+    @include desktop{
+        left: 405px;
+    }
+}
+.slick-next{
+    top: -139px;
+    right: 388px;
+    &:before{
+        font-size: 57px;
+        color: transparent;
+    }
+    @include desktop{
+        right: 300px;
+    }
+    
 }
