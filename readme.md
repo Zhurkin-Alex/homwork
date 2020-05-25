@@ -4,6 +4,7 @@ $ git clone https://github.com/Zhurkin-Alex/homwork.git
 $ cd homwork
 $ yarn
 ```
+### https://zhurkin-alex.github.io/homwork/
 
 ## Скрипты package.json:
 
